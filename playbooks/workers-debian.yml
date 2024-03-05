@@ -1,0 +1,11 @@
+- hosts: workers
+  become: yes
+  tasks:
+    - name: TCP port 6443 on master is reachable from worker
+      wait_for: "host=192.168.1.100 port=6443 timeout=1"
+
+    - name: join cluster
+      shell: "kubeadm join 192.168.1.100:6443 --token 0baolh.h4hd8cccvtaewabs --discovery-token-ca-cert-hash sha256:d246858c93caa31e3196ccdec05a6b3747e516d2eb9e2e2cf64e151c9234f1cc  >> node_joined.log"
+      args:
+        chdir: /home/jackarian
+        creates: node_joined.log

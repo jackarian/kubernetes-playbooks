@@ -1,4 +1,4 @@
-hosts
+host.ini
 keystone_rc.sh
 *.log
 /log[s]
