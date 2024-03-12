@@ -21,11 +21,11 @@
              runtimeRequestTimeout: "15m"
              cgroupDriver: "systemd"
              systemReserved:
-               cpu: 100m
-               memory: 350M
+               cpu: 1000m
+               memory: 800M
              kubeReserved:
-               cpu: 100m
-               memory: 50M
+               cpu: 1000m
+               memory: 600M
              enforceNodeAllocatable:
              - pods
 
